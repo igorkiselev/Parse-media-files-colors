@@ -1,0 +1,125 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Media Colors\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-13 14:58+0000\n"
+"PO-Revision-Date: 2018-05-13 15:05+0000\n"
+"Last-Translator: Игорь Киселев <igor@justbenice.ru>\n"
+"Language-Team: Русский\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
+"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#: options.php:32
+msgid "Basic settings"
+msgstr "Базовые настройки"
+
+#: index.php:111
+msgid ""
+"Brightness of the image (dark or light). Available as a boolean from post "
+"meta \"media-tone\"."
+msgstr ""
+"Яркость изображение (темное или светлое). Возвращается как true или false в "
+"мета запросе \"media-tone\"."
+
+#: index.php:140
+msgid "Colors"
+msgstr "Цвета"
+
+#: options.php:35
+msgid "Colors column"
+msgstr "Колонка с цветом"
+
+#: index.php:97
+msgid ""
+"Colors that dominate in the image. Available for you as an array from post "
+"meta \"media-color\"."
+msgstr ""
+"Цвета которые преобладают в изображении. Возвращается как массив с #hex "
+"цветами по мета запросу \"media-color\"."
+
+#: index.php:101 index.php:156
+msgid "Dark"
+msgstr "Темное"
+
+#: options.php:60
+msgid "Debug"
+msgstr "Дебаггер"
+
+#. Author URI of the plugin
+msgid "http://www.igorkiselev.com/"
+msgstr ""
+
+#. URI of the plugin
+msgid "http://www.igorkiselev.com/wp-plugin/media-colors/"
+msgstr ""
+
+#. Author of the plugin
+msgid ""
+"Igor Kiselev, Joe Hoyle, Marc Pacheco, Markus Näsman,Gaurav Sharma, Wencheng "
+"Wu and Edul N. Dalal."
+msgstr ""
+
+#: index.php:105
+msgid "Image brightness"
+msgstr "Яркость изображения"
+
+#: options.php:44
+msgid "Image size for parcing"
+msgstr "Размер изображения для парсера"
+
+#: index.php:101 index.php:156
+msgid "Light"
+msgstr "Светлое"
+
+#: index.php:91
+msgid "Main colors in the image"
+msgstr "Основные цвета в изображении"
+
+#. Name of the plugin
+msgid "Media Colors"
+msgstr "Цвета в изображении"
+
+#: options.php:18
+msgid "Media parser"
+msgstr "Медиа парсер"
+
+#. Description of the plugin
+msgid ""
+"Plugin that analyses uploaded image and generates most used colors in it."
+msgstr ""
+"Плагин, который анализирует загруженное изображение и генерирует наиболее "
+"часто используемые цвета в нем"
+
+#: options.php:72
+msgid ""
+"Plugin to make work easier. Developed by Igor Kiselev in <a href=\"//www."
+"justbenice.ru/\">Just Be Nice</a>"
+msgstr ""
+"Плагин для облегчения работы. Разработан Игорем Киселевым в <А href=\"//www."
+"justbenice.ru/\">Just Be Nice</а>"
+
+#: options.php:54
+msgid "Select image parse quality (the smallest the fastest)"
+msgstr ""
+"Выберите качество разбора изображения (наименьшее анализируется быстрее)"
+
+#: index.php:185
+msgid "Settings"
+msgstr "Настройки"
+
+#: options.php:37
+msgid "Show collor palletes in media library"
+msgstr "Отображение цветовые палитры в медиафайлах"
+
+#: index.php:141
+msgid "Theme"
+msgstr "Тема"
+
+#: index.php:175
+msgid "You do not have sufficient permissions to access this page."
+msgstr "У вас недостаточно прав для доступа к этой странице."
