@@ -51,8 +51,8 @@ function _attachment_palette($id)
     }
 }
 
-function _get_all_attachments_count(){
-	
+function _get_all_attachments_count()
+{
     $query_images_args = array(
         'post_type' => 'attachment', 'post_mime_type' =>'image', 'post_status' => 'inherit', 'posts_per_page' => -1,
         'meta_query' => array(array('key'     => 'media-color','compare' => 'NOT EXISTS'),
@@ -60,9 +60,8 @@ function _get_all_attachments_count(){
     );
 
     $query_images = new WP_Query($query_images_args);
-	
-	return count($query_images->posts);
-	
+    
+    return count($query_images->posts);
 }
 
 function _get_all_attachments()
@@ -86,7 +85,6 @@ function _get_all_attachments()
     $query_images = new WP_Query($query_images_args);
     
     foreach ($query_images->posts as $image) {
-		
         $src = wp_get_attachment_image_src($image->ID, $set['quality'])[0];
         
         $colors = _attachment_hex_array($src);
@@ -96,7 +94,6 @@ function _get_all_attachments()
         update_post_meta($image->ID, 'media-color', $colors);
         
         update_post_meta($image->ID, 'media-tone', $tone);
-
     }
 }
 
@@ -214,20 +211,19 @@ if (!empty($set['column'])) {
 }
 
 if (!empty($set['cron'])) {
-	
-    add_action('wp', function () {
-		
-        if (!wp_next_scheduled('mediacolorupdater')) {
-			
-            wp_schedule_event(time(), 'hourly', 'mediacolorupdater');
-        }
-    });
-	
-    register_deactivation_hook(__FILE__, function () {
-        wp_unschedule_event(wp_next_scheduled('mediacolorupdater'), 'mediacolorupdater');
-    });
-	
-    add_action('mediacolorupdater', '_get_all_attachments');
+    if (_get_all_attachments_count() != 0) {
+        add_action('wp', function () {
+            if (!wp_next_scheduled('mediacolorupdater')) {
+                wp_schedule_event(time(), 'hourly', 'mediacolorupdater');
+            }
+        });
+    
+        register_deactivation_hook(__FILE__, function () {
+            wp_unschedule_event(wp_next_scheduled('mediacolorupdater'), 'mediacolorupdater');
+        });
+    
+        add_action('mediacolorupdater', '_get_all_attachments');
+    }
 }
 
 

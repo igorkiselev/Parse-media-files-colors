@@ -60,7 +60,7 @@
 					<?php _e('Basic settings', 'media-colors'); ?>
 				</th>
 				<td>
-					<label><input name="media-colors_settings[cron]" type="checkbox" value="1" <?php (isset($settings['cron']) ? checked('1', $settings['cron']) : false);?> /> <strong><?php _e('Colors column', 'media-colors')?></strong></label>
+					<label><input name="media-colors_settings[cron]" type="checkbox" value="1" <?php (isset($settings['cron']) ? checked('1', $settings['cron']) : false);?> /> <strong><?php _e('Cron task', 'media-colors')?></strong></label>
 					<p class="description">
 						<?php
 						printf( esc_html__( 'You have %1$s, images that dont have colors attached. Add a cron task to convert 60 images every hour.', 'media-colors' ), _get_all_attachments_count() );
