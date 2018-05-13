@@ -24,7 +24,6 @@ add_action('admin_init', function () {
 add_filter('wp_handle_upload', function ($upload, $context) {
 }, 10, 2);
 
-
 add_action('admin_head', function () {
     echo	'<style>'.
             'span.color{width:2em; height:2em; margin-right:.5em; margin-bottom:.5em; display:inline-block; border-radius:2px; border:1px Solid rgba(0,0,0,0.1)}'.
@@ -162,8 +161,6 @@ add_filter('attachment_fields_to_edit', function ($form_fields, $post) {
     return $form_fields;
 }, 10, 2);
 
-
- 
 add_filter('attachment_fields_to_save', function ($post, $attachment) {
     global $set;
         
@@ -225,7 +222,6 @@ if (!empty($set['cron'])) {
         add_action('mediacolorupdater', '_get_all_attachments');
     }
 }
-
 
 add_action('admin_menu', function () {
     add_options_page(
