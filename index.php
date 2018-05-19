@@ -21,8 +21,7 @@ add_action('admin_init', function () {
     register_setting('media-colors', 'media-colors_settings');
 });
 
-add_filter('wp_handle_upload', function ($upload, $context) {
-}, 10, 2);
+
 
 add_action('admin_head', function () {
     echo	'<style>'.
@@ -161,6 +160,7 @@ add_filter('attachment_fields_to_edit', function ($form_fields, $post) {
     return $form_fields;
 }, 10, 2);
 
+
 add_filter('attachment_fields_to_save', function ($post, $attachment) {
     global $set;
         
@@ -177,6 +177,7 @@ add_filter('attachment_fields_to_save', function ($post, $attachment) {
     
     return $post;
 }, 10, 2);
+
 
 if (!empty($set['column'])) {
     add_filter('manage_media_columns', function ($columns) {
