@@ -208,6 +208,7 @@ if (!empty($set['column'])) {
     }, 10, 2);
 }
 
+
 if (!empty($set['cron'])) {
     if (_get_all_attachments_count() != 0) {
         add_action('wp', function () {
@@ -221,7 +222,7 @@ if (!empty($set['cron'])) {
         });
     
         add_action('mediacolorupdater', '_get_all_attachments');
-    }
+	}
 }
 
 add_action('admin_menu', function () {
