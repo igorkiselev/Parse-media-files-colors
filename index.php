@@ -111,6 +111,10 @@ class mediaColor
 		
 	}
 	
+	public function cron_get_all_attachments(){
+		$this->get_all_attachments();
+	}
+	
 	private function attachment_hex_average($array){
 	    
 		$tone = 0;
@@ -253,23 +257,26 @@ if (!empty($set['cron'])) {
 	
     if ($mediaColor->get_all_attachments_count() != 0) {
     
-	    add_action('wp', function () {
-    
-	        if (!wp_next_scheduled('mediacolorupdater')) {
-    
-	            wp_schedule_event(time(), 'hourly', 'mediacolorupdater');
-    
-	        }
-    
-	    });
-    
-        register_deactivation_hook(__FILE__, function () {
-    
-	        wp_unschedule_event(wp_next_scheduled('mediacolorupdater'), 'mediacolorupdater');
-    
-	    });
-    
-        add_action('mediacolorupdater', '_get_all_attachments');
+	
+	
+		register_activation_hook(__FILE__, function(){
+		    if (! wp_next_scheduled ( 'justbenice_media_hourly_event' )) {
+			wp_schedule_event(time(), 'hourly', 'justbenice_media_hourly_event');
+		    }
+		});
+
+		add_action('justbenice_media_hourly_event', function(){
+		    global $mediaColor;
+			
+			$mediaColor->cron_get_all_attachments();
+			
+		});
+
+		register_deactivation_hook(__FILE__, function(){
+			wp_clear_scheduled_hook('justbenice_media_hourly_event');
+		});
+	
+	
 	}
 
 }
